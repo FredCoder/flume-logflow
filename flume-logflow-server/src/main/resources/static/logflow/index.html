@@ -1,0 +1,106 @@
+<!doctype html>
+<html class="export" lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title></title>
+
+    <!-- Isotope does not require any CSS files -->
+    <link rel="stylesheet" href="../css/logflow/isotope-docs.css?6" media="screen">
+
+
+</head>
+<body class="page--filtering">
+
+
+<div class="nav">
+    <a href=".">
+        <div class="nav__title"></div>
+    </a>
+
+    <ol class="site-nav">
+        <li class="site-nav__item site-nav__item--filtering">
+            <a class="site-nav__item__link" href="filtering.html">日志监控</a></li>
+        <li class="site-nav__item site-nav__item--sorting">
+            <a class="site-nav__item__link" href="sorting.html">日志分析</a></li>
+        <li class="site-nav__item site-nav__item--layout-modes sub-nav-parent">
+            <a class="site-nav__item__link" href="layout-modes.html">服务分析</a>
+            <ul class="sub-nav">
+                <li class="sub-nav__item sub-nav__item--masonry">
+                    <a class="sub-nav__item__link" href="layout-modes/masonry.html">ois-file</a></li>
+                <li class="sub-nav__item sub-nav__item--fitrows">
+                    <a class="sub-nav__item__link" href="layout-modes/fitrows.html">ois-hr</a></li>
+                <li class="sub-nav__item sub-nav__item--vertical">
+                    <a class="sub-nav__item__link" href="layout-modes/vertical.html">ois-mk</a></li>
+                <li class="sub-nav__item sub-nav__item--packery">
+                    <a class="sub-nav__item__link" href="layout-modes/packery.html">ois-mm</a></li>
+                <li class="sub-nav__item sub-nav__item--cellsbyrow">
+                    <a class="sub-nav__item__link" href="layout-modes/cellsbyrow.html">ois-token</a></li>
+                <li class="sub-nav__item sub-nav__item--masonryhorizontal">
+                    <a class="sub-nav__item__link" href="layout-modes/masonryhorizontal.html">ois-message</a></li>
+                <li class="sub-nav__item sub-nav__item--fitcolumns">
+                    <a class="sub-nav__item__link" href="layout-modes/fitcolumns.html">ois-im</a></li>
+                <li class="sub-nav__item sub-nav__item--cellsbycolumn">
+                    <a class="sub-nav__item__link" href="layout-modes/cellsbycolumn.html">ois-log</a></li>
+            </ul>
+        </li>
+        <li class="site-nav__item site-nav__item--layout ">
+            <a class="site-nav__item__link" href="layout.html">仪表盘</a>
+        </li>
+        <li class="site-nav__item site-nav__item--faq">
+            <a class="site-nav__item__link" href="faq.html">FAQ</a></li>
+    </ol>
+</div>
+
+
+<div id="content" class="main">
+    <div class="container">
+        <h1>日志监控</h1>
+        <p>日志监控功能，是为了方便项目排错所搭建的一个日志收集系统，核心采集功能是通过 <code>flume-ng 1.8.0</code> 来完成的。日志采集到数据库的过程中会有 3~5
+            秒的延迟（目前实时响应功能正在开发）。</p>
+
+        <div class="big-demo go-wide" data-js="filtering-demo">
+            <div class="ui-group">
+                <h3 class="ui-group__title">项目服务</h3>
+
+                <div class="filters button-group js-radio-button-group logflow-services">
+                    <button class="button is-checked" data-filter="*">ALL</button>
+                </div>
+            </div>
+
+            <div class="ui-group">
+                <h3 class="ui-group__title">日志级别</h3>
+
+                <div class="filters button-group js-radio-button-group logflow-types">
+                    <button class="button is-checked" data-filter="*">ALL</button>
+                </div>
+            </div>
+
+            <form style="display:none;" id="queryParam">
+                <input type="hidden" class="hide-services" id="hide-services" name="serviceName" value=""/>
+                <input type="hidden" class="hide-types" name="logType" value=""/>
+                <input type="hidden" class="hide-page" id="hide-page" name="page" value="1"/>
+                <input type="hidden" class="hide-rows" name="rows" value="20"/>
+            </form>
+
+            <ul class="vertical-list"></ul>
+
+        </div>
+    </div>
+</div>
+<footer class="site-footer">
+
+</footer>
+
+<!-- Looking for isotope.js? Use isotope.pkgd.min.js -->
+<!-- Isotope does NOT require jQuery. But it does make things easier -->
+<script src="../js/jquery-3.1.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="../js/jquery.min.js"><\/script>')</script>
+<script src="../js/isotope.pkgd.min.js?6"></script>
+<script src="../js/assets/uuid.js"></script>
+<script src="../js/logflow/websocket.js"></script>
+<script src="../js/logflow/main.js?6"></script>
+
+</body>
+</html>
